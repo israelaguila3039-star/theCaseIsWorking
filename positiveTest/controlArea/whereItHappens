@@ -1,0 +1,14 @@
+import { expect } from '@wdio/globals'
+import thePlaceILogIn from '../stuff/loggingIn'
+import weAreHere from '../stuff/weGotHere'
+
+describe('My Login application', () => {
+    it('should login with valid credentials', async () => {
+        await LoginPage.open()
+
+        await LoginPage.login('standard_user', 'secret_sauce')
+        await expect(SecurePage.flashAlert).toBeExisting()
+        await expect(SecurePage.flashAlert).toHaveText(
+            expect.stringContaining('Swag Labs'))
+    })
+})
