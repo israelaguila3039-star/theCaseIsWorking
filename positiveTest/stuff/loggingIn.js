@@ -20,10 +20,6 @@ class thePlaceILogIn extends uRL {
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
     }
-
-    open () {
-        return super.open('login');
-    }
 }
 
 export default new thePlaceILogIn();
