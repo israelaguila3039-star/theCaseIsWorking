@@ -73,3 +73,8 @@ for (let i = 0; i < 6; i++){
 //No username
 theTestIng("", "secret_sauce", '[class="error-message-container error"]', true, 'Epic sadface: Username is required')
 
+//Replace all "_" with " "
+const spaceUsernames = usernames.map(str => { return str.replaceAll('_', ' ') });
+for (let i = 0; i < 6; i++){
+    theTestIng(spaceUsernames[i], "secret_sauce", '[class="error-message-container error"]', true, 'Epic sadface: Username and password do not match any user in this service');
+}
