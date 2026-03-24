@@ -62,7 +62,7 @@ for (let i = 0; i < usernames.length; i++){
 
 //Removing the "_" from the password
 for (let i = 0; i < usernames.length; i++){
-    theTestIngLogin(usernames[i], "secretsauce", '[class="error-message-container error"]', true, 'Epic sadface: Password is required');
+    theTestIngLogin(usernames[i], "secretsauce", '[class="error-message-container error"]', true, 'Epic sadface: Username and password do not match any user in this service');
 }
 
 //Wrong capitalization on the usernames
@@ -74,7 +74,7 @@ for (let i = 0; i < usernames.length; i++){
 
 //Wrong capitalization on the password
 for (let i = 0; i < usernames.length; i++){
-    theTestIngLogin(usernames[i], "SECRET_SAUCE", '[class="error-message-container error"]', true, 'Epic sadface: Password is required');
+    theTestIngLogin(usernames[i], "SECRET_SAUCE", '[class="error-message-container error"]', true, 'Epic sadface: Username and password do not match any user in this service');
 }
 
 //No password
