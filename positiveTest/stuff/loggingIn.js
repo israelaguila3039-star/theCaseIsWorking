@@ -1,6 +1,7 @@
 import { $ } from '@wdio/globals'
 import uRL from './theEndpointAtTheTop.js';
 
+//Selectors for the logging in tests
 class thePlaceILogIn extends uRL {
 
     get inputUsername () {

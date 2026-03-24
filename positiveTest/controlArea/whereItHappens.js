@@ -60,11 +60,21 @@ for (let i = 0; i < usernames.length; i++){
     theTestIngLogin(_lessUsernames[i], "secret_sauce", '[class="error-message-container error"]', true, 'Epic sadface: Username and password do not match any user in this service');
 }
 
-//Wrong capitalization
+//Removing the "_" from the password
+for (let i = 0; i < usernames.length; i++){
+    theTestIngLogin(usernames[i], "secretsauce", '[class="error-message-container error"]', true, 'Epic sadface: Password is required');
+}
+
+//Wrong capitalization on the usernames
 const capiUsernames = usernames.map(element => { return element.toUpperCase() });
 //Note to self: Remember to put the [i] so that you do not take 20 minutes trying to solve an issue that does not actually exist
 for (let i = 0; i < usernames.length; i++){
     theTestIngLogin(capiUsernames[i], "secret_sauce", '[class="error-message-container error"]', true, 'Epic sadface: Username and password do not match any user in this service');
+}
+
+//Wrong capitalization on the password
+for (let i = 0; i < usernames.length; i++){
+    theTestIngLogin(usernames[i], "SECRET_SAUCE", '[class="error-message-container error"]', true, 'Epic sadface: Password is required');
 }
 
 //No password
