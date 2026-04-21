@@ -1,7 +1,6 @@
 import { $ } from '@wdio/globals'
-import passYouShall from './functions.js'
 
-class stuff extends passYouShall {
+export default class stuff {
     get inputUsername () {
         return $('#field-r4__control');
     }
@@ -14,6 +13,19 @@ class stuff extends passYouShall {
         return $("//button[text()='Login']");
     }
 
-}
+    get modeButton () {
+        return $('button[data-testid="theme-toggle"]');
+    }
 
-export default new stuff();
+    get darkModeOn () {
+        return $('[data-theme="dark"]');
+    }
+
+    get lightModeOn () {
+        return $('[data-theme="light"]');
+    }
+
+    get loggedIn () {
+        return $("//span[text()='Account Settings']");
+    }
+}

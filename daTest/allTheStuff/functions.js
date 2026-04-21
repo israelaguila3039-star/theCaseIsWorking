@@ -6,8 +6,8 @@ import { username, password } from './values.js'
 export default class itFunctions {
 
     constructor() {
-            this.sT = new stuff
-        }
+        this.sT = new stuff()
+    }
 
     async passYouShall (path = '') {
         await browser.url(`https://app.thecasework.com/${path}`);

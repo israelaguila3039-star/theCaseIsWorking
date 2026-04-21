@@ -1,14 +1,12 @@
 import stuff from './selectors.js'
-import whut from './values.js'
 import itFunctions from './functions.js'
 
 
 export default class daCode {
 
     constructor() {
-        this.funcs = new itFunctions
-        this.sT = new stuff
-        // this.wH = new whut
+        this.funcs = new itFunctions()
+        this.sT = new stuff()
     }
 
     async loginTest () {
