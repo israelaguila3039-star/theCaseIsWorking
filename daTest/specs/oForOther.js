@@ -25,3 +25,11 @@ describe('Test', () => {
 //         await expect(new stuff().lightModeOn).toBeDisplayed();
 //     })
 // })
+
+//Test to chekc if the page clicks work from every page and direct user to right pages
+describe('Test', () => {
+    it('should direct user to each respective page', async () => {
+        await new daCode().sideBarMenuTest();
+        await expect(new stuff().loggedIn).toBeExisting();
+    })
+})

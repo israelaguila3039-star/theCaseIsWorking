@@ -14,18 +14,28 @@ export default class stuff {
     }
 
     get modeButton () {
-        return $('button[data-testid="theme-toggle"]');
+        return $('button[data-testid="menu-theme-button"]');
     }
 
     get darkModeOn () {
-        return $('[data-theme="dark"]');
+        return $('//div[text()="Switch to Light Mode"]');
     }
 
     get lightModeOn () {
-        return $('[data-theme="light"]');
+        return $('//div[text()="Switch to Dark Mode"]');
     }
 
     get loggedIn () {
         return $("//span[text()='Account Settings']");
+    }
+
+    get titlesList () {
+        return [$('//label/span[text()="Account Info"]'), $('//label/span[text()="Account Settings"]'), 
+            $('//label/span[text()="Case Data Types"]'), $('//label/span[text()="Users"]')]
+    }
+
+    get sidebarList () {
+        return [$('button[data-testid=account-settings-account-info-tab]'), $('button[data-testid=account-settings-settings-tab]'),
+             $('button[data-testid=account-settings-case-data-tab]'), $('button[data-testid=account-settings-users-tab]')]
     }
 }

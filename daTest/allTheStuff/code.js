@@ -21,4 +21,8 @@ export default class daCode {
     async lightModeCheck () {
         await this.funcs.lightMode();
     }
+
+    async sideBarMenuTest () {
+        await this.funcs.clickSidebarAndReturn();
+    }
 }
