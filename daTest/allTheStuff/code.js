@@ -16,10 +16,12 @@ export default class daCode {
 
     async darkModeCheck () {
         await this.funcs.darkMode();
+        await this.sT.modeButton.moveTo();
     }
 
     async lightModeCheck () {
         await this.funcs.lightMode();
+        await this.sT.modeButton.moveTo();
     }
 
     async sideBarMenuTest () {

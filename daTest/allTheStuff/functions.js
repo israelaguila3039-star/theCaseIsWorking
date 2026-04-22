@@ -60,7 +60,6 @@ export default class itFunctions {
         if (state === false) {
             await this.sT.modeButton.click();
         }
-        await this.sT.modeButton.moveTo();
     }
 
     async darkMode () {
@@ -68,7 +67,6 @@ export default class itFunctions {
         if (state === true) {
             await this.sT.modeButton.click();
         }
-        await this.sT.modeButton.moveTo();
     }
 
     async clickSidebarAndReturn (pageTitle, sideBarButtons) {
@@ -76,10 +74,17 @@ export default class itFunctions {
             for (let e = 0; e < this.sT.sidebarList.length; e++) {
                 await this.sT.sidebarList[i].click();
                 await this.sT.titlesList[i].waitForDisplayed();
-                await this.sT.sidebarList[e].click()
+                await this.sT.sidebarList[e].click();
                 await this.sT.titlesList[e].waitForDisplayed();
                 await this.sT.sidebarList[i].click();
             }
         }
     }
+
+    async giveBoxValue (box, value) {
+        await box.click();
+        await box.setValue(value);
+    }
+
+
 }
