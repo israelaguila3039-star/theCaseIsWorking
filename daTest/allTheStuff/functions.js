@@ -1,12 +1,13 @@
 import { browser } from '@wdio/globals'
 import stuff from './selectors.js'
-import { username, password } from './values.js'
+import whut from './values.js'
 
 
 export default class itFunctions {
 
     constructor() {
-        this.sT = new stuff()
+        this.sT = new stuff();
+        this.wH = new whut();
     }
 
     async passYouShall (path = '') {
@@ -40,31 +41,35 @@ export default class itFunctions {
 
     async loggIn () {
         await this.passYouShall();
-        await this.sT.inputUsername.setValue(username);
-        await this.sT.inputPassword.setValue(password);
+        await this.sT.inputUsername.setValue(this.wH.username);
+        await this.sT.inputPassword.setValue(this.wH.password);
         await this.sT.btnSubmit.click();
         await this.waitForAuth();
     }
 
     async checkMode () {
         await this.sT.modeButton.moveTo();
+        await this.sT.modeButton.moveTo();
         if (await this.sT.darkModeOn.isDisplayed()) {
-            return false;
-        } else if (await this.sT.lightModeOn.isDisplayed()) {
-            return true;
+            return 2;
+        }
+        if(await this.sT.lightModeOn.isDisplayed()) {
+            return 1;
         }
     }
 
     async lightMode () {
         let state = await this.checkMode();
-        if (state === false) {
+
+        if (state === 2) {
             await this.sT.modeButton.click();
         }
     }
 
     async darkMode () {
         let state = await this.checkMode();
-        if (state === true) {
+
+        if (state === 1) {
             await this.sT.modeButton.click();
         }
     }
@@ -86,5 +91,18 @@ export default class itFunctions {
         await box.setValue(value);
     }
 
+    async clearBoxValue (box) {
+        await box.click();
+        await browser.keys(['Command', 'a']);
+        await browser.keys('Backspace');
+    }
 
+    async getRandomValue (arr, length) {
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * arr.length);
+            result += arr[randomIndex];
+        }
+        return result;
+    }
 }
