@@ -108,8 +108,20 @@ export default class itFunctions {
 
     async deselectCheckbox (box, checker) {
         if (await checker.isDisplayed()) {
-            box.click();
-            this.sT.updateButton.click();
+            await box.click();
+            if (await this.sT.updateButton.isDisplayed()) {
+                await this.sT.updateButton.click();
+            } 
+        }
+    }
+
+    async selectBox (box, checker) {
+        if (await checker.isDisplayed()) {
+        } else {
+            await box.click();
+            if (await this.sT.updateButton.isDisplayed()) {
+                await this.sT.updateButton.click();
+            } 
         }
     }
 }

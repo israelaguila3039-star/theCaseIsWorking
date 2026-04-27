@@ -29,17 +29,29 @@ describe('Light Test', () => {
         await new daCode().noCheckboxesSelected();
         for (let i = 0; i < new stuff().checkboxOn.length; i++){
             await expect(new stuff().checkboxOn[i]).not.toBeExisting()
-    }
+        }
     })
 })
 
 //One checkbox selected at a time
 describe('Light Test', () => {
     it('should select one checkbox at a time', async () => {
-        for (let i = new stuff().checkboxOn.length; i > 0; i--){
+        await new daCode().noCheckboxesSelected();
+        for (let i = new stuff().checkboxOn.length-1; i >= 0; i--){
             await new daCode().selectOneBoxAtATime(i);
-            await expect(new stuff().checkboxOn[i]).not.toBeExisting()
+            await expect(new stuff().checkboxOn[i]).toBeExisting()
+            await new stuff().checkboxList[i].click();
     }
+    })
+})
+
+//All checkboxes selected
+describe('Light Test', () => {
+    it('should have all boxes selected', async () => {
+        await new daCode().allCheckboxesSelected();
+        for (let i = 0; i < new stuff().checkboxOn.length; i++){
+            await expect(new stuff().checkboxOn[i]).toBeExisting()
+        }
     })
 })
 
@@ -63,5 +75,27 @@ describe('Dark Test', () => {
         for (let i = 0; i < new stuff().checkboxOn.length; i++){
             await expect(new stuff().checkboxOn[i]).not.toBeExisting()
     }
+    })
+})
+
+//One checkbox selected at a time
+describe('Dark Test', () => {
+    it('should select one checkbox at a time', async () => {
+        await new daCode().noCheckboxesSelected();
+        for (let i = new stuff().checkboxOn.length-1; i >= 0; i--){
+            await new daCode().selectOneBoxAtATime(i);
+            await expect(new stuff().checkboxOn[i]).toBeExisting();
+            await new stuff().checkboxList[i].click();
+    }
+    })
+})
+
+//All checkboxes selected
+describe('Dark Test', () => {
+    it('should have all boxes selected', async () => {
+        await new daCode().allCheckboxesSelected();
+        for (let i = 0; i < new stuff().checkboxOn.length; i++){
+            await expect(new stuff().checkboxOn[i]).toBeExisting()
+        }
     })
 })

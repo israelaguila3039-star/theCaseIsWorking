@@ -72,12 +72,20 @@ export default class daCode {
 
     async noCheckboxesSelected () {
         for (let i = 0; i < this.sT.checkboxList.length; i++) {
-            this.funcs.deselectCheckbox(this.sT.checkboxList[i], this.sT.checkboxOn[i])
+            await this.funcs.deselectCheckbox(this.sT.checkboxList[i], this.sT.checkboxOn[i])
         }
     }
 
     async selectOneBoxAtATime (i) {
-        this.sT.checkboxList[i].click()
-        this.sT.updateButton.click()
+        await this.sT.checkboxList[i].click()
+        if (await this.sT.updateButton.isDisplayed()) {
+                await this.sT.updateButton.click();
+            } 
+    }
+
+    async allCheckboxesSelected () {
+        for (let i = this.sT.checkboxList.length-1; i >= 0; i--) {
+            await this.funcs.selectBox(this.sT.checkboxList[i], this.sT.checkboxOn[i])
+        }
     }
 }
