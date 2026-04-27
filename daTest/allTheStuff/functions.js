@@ -105,4 +105,11 @@ export default class itFunctions {
         }
         return result;
     }
+
+    async deselectCheckbox (box, checker) {
+        if (await checker.isDisplayed()) {
+            box.click();
+            this.sT.updateButton.click();
+        }
+    }
 }

@@ -39,6 +39,22 @@ export default class stuff {
              $('button[data-testid=account-settings-case-data-tab]'), $('button[data-testid=account-settings-users-tab]')];
     }
 
+    get accountInfo () {
+        return $('button[data-testid=account-settings-account-info-tab]');
+    }
+
+    get accountSettings () {
+        return $('button[data-testid=account-settings-settings-tab]');
+    }
+
+    get caseDataTypes () {
+        return $('button[data-testid=account-settings-case-data-tab]');
+    }
+
+    get usersSettings () {
+        return $('button[data-testid=account-settings-users-tab]');
+    }
+
     get updateButton () {
         return $('//button[text()="Update"]');
     }
@@ -69,5 +85,25 @@ export default class stuff {
 
     get nameRequiredError () {
         return $('//div[text()="Account Name is required."]');
+    }
+
+    get checkboxList () {
+        return [$('//span[text()="Group Custom Statuses by corresponding System Status"]'), $('//span[text()="Notify Admins when a case is created."]'), 
+            $('//span[text()="Notify Admins when a case status changes."]'), $('//span[text()="Notify Admins when a case is deleted."]'), 
+            $('//span[text()="Notify Admins when a case engagement is modified."]'), $('//span[text()="Cannot complete a "]'), 
+            $('//span[text()="Notify admins when a milestone is updated."]'), $('//span[text()="Require tasks to be attached to milestones"]'), 
+            $('//span[text()="Notify Case Leads when a task is created without a milestone attached."]'), $('//span[text()="Must create/edit "]'), 
+            $('//span[text()="Merge in "]')
+        ];
+    }
+
+    get checkboxOn () {
+        return [$('//span[text()="Group Custom Statuses by corresponding System Status"][ancestor::span//div/*[name()="svg"]]'), $('//span[text()="Notify Admins when a case is created."][ancestor::span//div/*[name()="svg"]]'), 
+            $('//span[text()="Notify Admins when a case status changes."][ancestor::span//div/*[name()="svg"]]'), $('//span[text()="Notify Admins when a case is deleted."][ancestor::span//div/*[name()="svg"]]'), 
+            $('//span[text()="Notify Admins when a case engagement is modified."][ancestor::span//div/*[name()="svg"]]'), $('//span[text()="Cannot complete a "][ancestor::span//div/*[name()="svg"]]'),
+            $('//span[text()="Notify admins when a milestone is updated."][ancestor::span//div/*[name()="svg"]]'), $('//span[text()="Require tasks to be attached to milestones"][ancestor::span//div/*[name()="svg"]]'), 
+            $('//span[text()="Notify Case Leads when a task is created without a milestone attached."][ancestor::span//div/*[name()="svg"]]'), $('//span[text()="Must create/edit "][ancestor::span//div/*[name()="svg"]]'), 
+            $('//span[text()="Merge in "][ancestor::span//div/*[name()="svg"]]')
+        ];
     }
 };

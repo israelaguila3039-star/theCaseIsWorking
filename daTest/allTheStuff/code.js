@@ -69,4 +69,15 @@ export default class daCode {
         await this.funcs.giveBoxValue(this.sT.zipBox, await this.funcs.getRandomValue(this.wH.symbolStringList, 10));
         await this.sT.updateButton.click();
     }
+
+    async noCheckboxesSelected () {
+        for (let i = 0; i < this.sT.checkboxList.length; i++) {
+            this.funcs.deselectCheckbox(this.sT.checkboxList[i], this.sT.checkboxOn[i])
+        }
+    }
+
+    async selectOneBoxAtATime (i) {
+        this.sT.checkboxList[i].click()
+        this.sT.updateButton.click()
+    }
 }

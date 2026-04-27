@@ -19,6 +19,13 @@ import stuff from '../allTheStuff/selectors.js'
 //     })
 // })
 
+// describe('Dark Test', () => {
+//     it('should direct user to each respective page', async () => {
+//         await new daCode().sideBarMenuTest();
+//         await expect(new stuff().loggedIn).toBeExisting();
+//     })
+// })
+
 // describe('Test', () => {
 //     it('should switch mode to light', async () => {
 //         await new daCode().lightModeCheck();
@@ -26,8 +33,8 @@ import stuff from '../allTheStuff/selectors.js'
 //     })
 // })
 
-//Test to chekc if the page clicks work from every page and direct user to right pages
-// describe('Test', () => {
+//Test to check if the page clicks work from every page and direct user to right pages
+// describe('Light Test', () => {
 //     it('should direct user to each respective page', async () => {
 //         await new daCode().sideBarMenuTest();
 //         await expect(new stuff().loggedIn).toBeExisting();
