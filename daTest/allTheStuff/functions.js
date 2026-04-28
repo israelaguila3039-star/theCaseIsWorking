@@ -107,21 +107,14 @@ export default class itFunctions {
     }
 
     async deselectCheckbox (box, checker) {
-        if (await checker.isDisplayed()) {
+        if (await checker.isExisting()) {
             await box.click();
-            if (await this.sT.updateButton.isDisplayed()) {
-                await this.sT.updateButton.click();
-            } 
         }
     }
 
     async selectBox (box, checker) {
-        if (await checker.isDisplayed()) {
-        } else {
+        if (!await checker.isExisting()) {
             await box.click();
-            if (await this.sT.updateButton.isDisplayed()) {
-                await this.sT.updateButton.click();
-            } 
-        }
+        } 
     }
 }

@@ -36,11 +36,10 @@ describe('Light Test', () => {
 //One checkbox selected at a time
 describe('Light Test', () => {
     it('should select one checkbox at a time', async () => {
-        await new daCode().noCheckboxesSelected();
-        for (let i = new stuff().checkboxOn.length-1; i >= 0; i--){
+        for (let i = new stuff().checkboxList.length-1; i >= 0; i--){
             await new daCode().selectOneBoxAtATime(i);
             await expect(new stuff().checkboxOn[i]).toBeExisting()
-            await new stuff().checkboxList[i].click();
+            await new daCode().noCheckboxesSelected();
     }
     })
 })
@@ -49,7 +48,7 @@ describe('Light Test', () => {
 describe('Light Test', () => {
     it('should have all boxes selected', async () => {
         await new daCode().allCheckboxesSelected();
-        for (let i = 0; i < new stuff().checkboxOn.length; i++){
+        for (let i = 0; i < new stuff().checkboxList.length; i++){
             await expect(new stuff().checkboxOn[i]).toBeExisting()
         }
     })
@@ -81,11 +80,10 @@ describe('Dark Test', () => {
 //One checkbox selected at a time
 describe('Dark Test', () => {
     it('should select one checkbox at a time', async () => {
-        await new daCode().noCheckboxesSelected();
-        for (let i = new stuff().checkboxOn.length-1; i >= 0; i--){
+        for (let i = new stuff().checkboxList.length-1; i >= 0; i--){
             await new daCode().selectOneBoxAtATime(i);
             await expect(new stuff().checkboxOn[i]).toBeExisting();
-            await new stuff().checkboxList[i].click();
+            await new daCode().noCheckboxesSelected();
     }
     })
 })
@@ -94,7 +92,7 @@ describe('Dark Test', () => {
 describe('Dark Test', () => {
     it('should have all boxes selected', async () => {
         await new daCode().allCheckboxesSelected();
-        for (let i = 0; i < new stuff().checkboxOn.length; i++){
+        for (let i = 0; i < new stuff().checkboxList.length; i++){
             await expect(new stuff().checkboxOn[i]).toBeExisting()
         }
     })
