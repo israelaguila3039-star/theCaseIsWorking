@@ -81,8 +81,7 @@ export default class daCode {
         try {
             await updateButtonSelector.waitForClickable({ timeout: 5000 });
             await updateButtonSelector.click();
-        }  catch (err) {
-        }
+        }  catch (err) {};
     } 
 
     async allCheckboxesSelected () {
@@ -90,4 +89,48 @@ export default class daCode {
             await this.funcs.selectBox(this.sT.checkboxList[i], this.sT.checkboxOn[i])
         }
     }
-}
+
+    async emptyWarning () {
+        await this.funcs.clearBoxValue(this.sT.warningBox);
+        try {
+            await updateButtonSelector.waitForClickable({ timeout: 5000 });
+            await updateButtonSelector.click();
+        }  catch (err) {};
+    }
+
+    async emptyDanger () {
+        await this.funcs.clearBoxValue(this.sT.dangerBox);
+        try {
+            await updateButtonSelector.waitForClickable({ timeout: 5000 });
+            await updateButtonSelector.click();
+        }  catch (err) {};
+    }
+
+    async baseWarningDanger () {
+        if (!await this.sT.warningBoxBase.isExisting()) {
+            await this.funcs.giveBoxValue(this.sT.warningBox, this.wH.warningBase);
+        }
+        if (!await this.sT.dangerBoxBase.isExisting()) {
+            await this.funcs.giveBoxValue(this.sT.dangerBox, this.wH.dangerBase);
+        }
+        try {
+            await updateButtonSelector.waitForClickable({ timeout: 5000 });
+            await updateButtonSelector.click();
+        }  catch (err) {};
+    }
+
+    async lettersWarningDanger () {
+        await this.emptyWarning();
+        await this.emptyDanger();
+        await this.funcs.giveBoxValue(this.sT.warningBox, await this.funcs.getRandomValue(this.wH.letterStringList, 10));
+        await this.funcs.giveBoxValue(this.sT.dangerBox, await this.funcs.getRandomValue(this.wH.letterStringList, 10));
+    }
+
+    async symbolsWarningDanger () {
+        await this.emptyWarning();
+        await this.emptyDanger();
+        await this.funcs.giveBoxValue(this.sT.warningBox, await this.funcs.getRandomValue(this.wH.symbolStringList, 10));
+        await this.funcs.giveBoxValue(this.sT.dangerBox, await this.funcs.getRandomValue(this.wH.symbolStringList, 10));
+    }
+
+};

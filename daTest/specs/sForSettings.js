@@ -49,10 +49,55 @@ describe('Light Test', () => {
     it('should have all boxes selected', async () => {
         await new daCode().allCheckboxesSelected();
         for (let i = 0; i < new stuff().checkboxList.length; i++){
-            await expect(new stuff().checkboxOn[i]).toBeExisting()
+            await expect(new stuff().checkboxOn[i]).toBeExisting();
         }
     })
 })
+
+
+//Metrics tests
+
+//Positive
+describe('Light Test', () => {
+    it('should input correct base values if not already there', async () => {
+        await new daCode().baseWarningDanger();
+        await expect(new stuff().warningBoxBase).toBeExisting();
+        await expect(new stuff().dangerBoxBase).toBeExisting();
+    })
+})
+
+//Negative empty
+describe('Light Test', () => {
+    it('should input nothing into warning and danger', async () => {
+        await new daCode().emptyWarning();
+        await expect(new stuff().boxEmptyCheck).toBeExisting();
+        await new daCode().baseWarningDanger();
+        await new daCode().emptyDanger();
+        await expect(new stuff().boxEmptyCheck).toBeExisting();
+    })
+})
+
+//Negative letters
+describe('Light Test', () => {
+    it('should input letters into warning and danger', async () => {
+        await new daCode().lettersWarningDanger();
+        await expect(new stuff().warningBoxBase).not.toBeExisting();
+        await expect(new stuff().dangerBoxBase).not.toBeExisting();
+        await new daCode().baseWarningDanger();
+    })
+})
+
+//Negative symbols
+describe('Light Test', () => {
+    it('should input symbols into warning and danger', async () => {
+        await new daCode().symbolsWarningDanger();
+        await expect(new stuff().warningBoxBase).not.toBeExisting();
+        await expect(new stuff().dangerBoxBase).not.toBeExisting();
+        await new daCode().baseWarningDanger();
+    })
+})
+
+
 
 
 //Dark mode tests
@@ -95,5 +140,48 @@ describe('Dark Test', () => {
         for (let i = 0; i < new stuff().checkboxList.length; i++){
             await expect(new stuff().checkboxOn[i]).toBeExisting()
         }
+    })
+})
+
+
+//Metrics tests
+
+//Positive
+describe('Dark Test', () => {
+    it('should input correct base values if not already there', async () => {
+        await new daCode().baseWarningDanger();
+        await expect(new stuff().warningBoxBase).toBeExisting();
+        await expect(new stuff().dangerBoxBase).toBeExisting();
+    })
+})
+
+//Negative empty
+describe('Dark Test', () => {
+    it('should input nothing into warning and danger', async () => {
+        await new daCode().emptyWarning();
+        await expect(new stuff().boxEmptyCheck).toBeExisting();
+        await new daCode().baseWarningDanger();
+        await new daCode().emptyDanger();
+        await expect(new stuff().boxEmptyCheck).toBeExisting();
+    })
+})
+
+//Negative letters
+describe('Dark Test', () => {
+    it('should input letters into warning and danger', async () => {
+        await new daCode().lettersWarningDanger();
+        await expect(new stuff().warningBoxBase).not.toBeExisting();
+        await expect(new stuff().dangerBoxBase).not.toBeExisting();
+        await new daCode().baseWarningDanger();
+    })
+})
+
+//Negative symbols
+describe('Dark Test', () => {
+    it('should input symbols into warning and danger', async () => {
+        await new daCode().symbolsWarningDanger();
+        await expect(new stuff().warningBoxBase).not.toBeExisting();
+        await expect(new stuff().dangerBoxBase).not.toBeExisting();
+        await new daCode().baseWarningDanger();
     })
 })

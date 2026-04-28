@@ -106,4 +106,25 @@ export default class stuff {
             $('//span[text()="Merge in "][ancestor::span//div/*[name()="svg"]]')
         ];
     }
+
+    get warningBox () {
+        return $('input[data-testid="account-settings-metric-display-input-warning-settings.billingTimePercentDisplay"]');
+    }
+
+    get dangerBox () {
+        return $('input[data-testid="account-settings-metric-display-input-danger-settings.billingTimePercentDisplay"]');
+    }
+
+    get boxEmptyCheck () {
+        return $('input[value=""]');
+    }
+    
+    get warningBoxBase () {
+        return $('input[value="2"]');
+    }
+
+    get dangerBoxBase () {
+        return $('input[value="99"]');
+    }
+
 };
