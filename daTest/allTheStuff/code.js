@@ -11,6 +11,7 @@ export default class daCode {
         this.wH = new whut();
     }
 
+
     async loginTest () {
         await this.funcs.loggIn();
         await this.funcs.passYouShall("account/settings");
@@ -131,6 +132,45 @@ export default class daCode {
         await this.emptyDanger();
         await this.funcs.giveBoxValue(this.sT.warningBox, await this.funcs.getRandomValue(this.wH.symbolStringList, 10));
         await this.funcs.giveBoxValue(this.sT.dangerBox, await this.funcs.getRandomValue(this.wH.symbolStringList, 10));
+    }
+
+    async createLettersNCT () {
+        await this.funcs.clearBoxValue(this.sT.newCTBox);
+        await this.funcs.giveBoxValue(this.sT.newCTBox, this.wH.lettersNCTName);
+        await this.sT.addNCT.waitForClickable({ timeout: 5000 });
+        await this.sT.addNCT.click();
+    }
+
+    async deleteLettersNCT () {
+        await this.sT.deleteLettersNCT.waitForExist({ timeout: 5000 });
+        await this.sT.deleteLettersNCT.moveTo();
+        await this.sT.deleteLettersNCT.click();
+    }
+
+    async createNumbersNCT () {
+        await this.funcs.clearBoxValue(this.sT.newCTBox);
+        await this.funcs.giveBoxValue(this.sT.newCTBox, this.wH.numbersNCTName);
+        await this.sT.addNCT.waitForClickable({ timeout: 5000 });
+        await this.sT.addNCT.click();
+    }
+
+    async deleteNumbersNCT () {
+        await this.sT.deleteNumbersNCT.waitForExist({ timeout: 5000 });
+        await this.sT.deleteNumbersNCT.moveTo();
+        await this.sT.deleteNumbersNCT.click();
+    }
+
+    async createLettersNET () {
+        await this.funcs.clearBoxValue(this.sT.expenseTBox);
+        await this.funcs.giveBoxValue(this.sT.expenseTBox, this.wH.lettersNCTName);
+        await this.sT.addNET.waitForClickable({ timeout: 5000 });
+        await this.sT.addNET.click();
+    }
+
+    async deleteLettersNET () {
+        await this.sT.deleteLettersNCT.waitForExist({ timeout: 5000 });
+        await this.sT.deleteLettersNCT.moveTo();
+        await this.sT.deleteLettersNCT.click();
     }
 
 };

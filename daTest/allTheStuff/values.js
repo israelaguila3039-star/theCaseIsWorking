@@ -40,4 +40,12 @@ export default class whut {
         return "99"
     }
 
+    get lettersNCTName () {
+        return "lettersTesting"
+    }
+
+    get numbersNCTName () {
+        return "0892476153"
+    }
+
 }

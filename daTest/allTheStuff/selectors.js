@@ -127,4 +127,28 @@ export default class stuff {
         return $('input[value="99"]');
     }
 
+    get newCTBox () {
+        return $('input[data-testid="case-type-panel-type-input"]');
+    }
+
+    get deleteLettersNCT () {
+        return $('button[data-testid="case-data-type-lettersTesting"]');
+    }
+
+    get addNCT () {
+        return $('button[data-testid="case-type-panel-add-button"]');
+    }
+
+    get deleteNumbersNCT () {
+        return $('button[data-testid="case-data-type-0892476153"]');
+    }
+
+    get expenseTBox () {
+        return $('input[data-testid="expense-type-panel-input"]');
+    }
+
+    get addNET () {
+        return $('button[data-testid="expense-type-panel-add-button"]');
+    }
+
 };
