@@ -151,4 +151,77 @@ export default class stuff {
         return $('button[data-testid="expense-type-panel-add-button"]');
     }
 
+    get addUserButton () {
+        return $('button[data-testid="users-add-user-button"]');
+    }
+
+    get userNameBox () {
+        return $('input[data-testid="user-dialog-name"]');
+    }
+
+    get userEmailBox () {
+        return $('input[data-testid="user-dialog-username"]');
+    }
+
+    get userAddressBox () {
+        return $('input[data-testid="user-dialog-address1"]');
+    }
+
+    get userAddress2Box () {
+        return $('input[data-testid="user-dialog-address2"]');
+    }
+
+    get userPhoneBox () {
+        return $('input[data-testid="user-dialog-phone"]');
+    }
+
+    get userCityBox () {
+        return $('input[data-testid="user-dialog-city"]');
+    }
+
+    get userStateBox () {
+        return $('input[data-testid="user-dialog-state"]');
+    }
+
+    get userZipBox () {
+        return $('input[data-testid="user-dialog-zip"]');
+    }
+
+    get userPTypeBox () {
+        return $('select[data-testid="user-dialog-phone-type"]');
+    }
+
+    get phoneTypesList () {
+        return [$x('//option[text()="Select phone type"]'), $('//option[text()="Office"]'),
+            $('//option[text()="Cell"]'), $('//option[text()="Other"]')];
+    }
+
+    get submitUserBtn () {
+        return $('button[data-testid="user-dialog-submit"]');
+    }
+
+    get userDots1 () {
+        return $('//button[@aria-label="More items"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
+    }
+
+    get userDoubleClick1 () {
+        return $x('//span[text()="TemplateName"]');
+    }
+
+    get userDelete1 () {
+        return $('//button[@aria-label="Delete"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
+    }
+    
+    get userEdit1 () {
+        return $('//button[@aria-label="Edit"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
+    }
+
+    get userDotsDelete1 () {
+        return $('div[data-testid="custom-data-table-context-menu-item-Delete"]');
+    }
+
+    get userDotsEdit1 () {
+        return $('div[data-testid="custom-data-table-context-menu-item-Edit"]');
+    }
+
 };

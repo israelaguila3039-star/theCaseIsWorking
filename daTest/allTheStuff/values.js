@@ -48,4 +48,57 @@ export default class whut {
         return "0892476153"
     }
 
+    get userNameP () {
+        return "TemplateName"
+    }
+
+    get userNamePE () {
+        return "NameTemplate"
+    }
+
+    get userEmailP () {
+        return "templateName@example.com"
+    }
+
+    get userEmailPE () {
+        return "nameTemplate@example.com"
+    }
+
+    get userAddressP() {
+        return "123 N Main St"
+    }
+
+    get userAddressPE () {
+        return "123 S Main St"
+    }
+
+    get userAddress2P () {
+        return "456 W Pine Ave"
+    }
+
+    get userAddress2PE () {
+        return "456 E Pine Ave"
+    }
+
+    get userPhoneP () {
+        return "+1 (555) 123-4567"
+    }
+
+    get userCityP () {
+        return "Springfield"
+    }
+
+    get userStateP () {
+        return "IL"
+    }
+
+    get userZipP () {
+        return "62704"
+    }
+
+    get amountOfEditAndDeleteOptions () {
+        return 3
+        //More like 4 cuz of 0
+    }
+
 }

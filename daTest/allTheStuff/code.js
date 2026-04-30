@@ -173,4 +173,28 @@ export default class daCode {
         await this.sT.deleteLettersNCT.click();
     }
 
+    async createUserP (i) {
+        await this.sT.addUserButton.click();
+        await this.funcs.giveBoxValue(this.sT.userNameBox, this.wH.userNameP);
+        await this.funcs.giveBoxValue(this.sT.userEmailBox, this.wH.userNameP);
+        await this.funcs.giveBoxValue(this.sT.userAddressBox, this.wH.userNameP);
+        await this.funcs.giveBoxValue(this.sT.userAddress2Box, this.wH.userNameP);
+        await this.funcs.giveBoxValue(this.sT.userPhoneBox, this.wH.userNameP);
+        await this.funcs.giveBoxValue(this.sT.userCityBox, this.wH.userNameP);
+        await this.funcs.giveBoxValue(this.sT.userStateBox, this.wH.userNameP);
+        await this.funcs.giveBoxValue(this.sT.userZipBox, this.wH.userNameP);
+        await this.sT.userPTypeBox.click();
+        await this.sT.phoneTypesList[i].click();
+        await this.sT.submitUserBtn.click();
+    }
+
+    async editUserP (i) {
+        if (i = 0) {
+            await this.sT.userDots1.waitForClickable({ timeout: 5000 });
+            await this.sT.userDots1.click();
+            await this.sT.userDotsEdit1.waitForClickable({ timeout: 5000 });
+            await this.sT.userDotsEdit1.click();
+        }
+    }
+
 };
