@@ -22,7 +22,33 @@ describe('Test', () => {
 
 //The CRUD tests a.k.a.  H E double hockey sticks
 
-//Positive CRUD test
+//Positive CRUD test with three dots
+// describe('Light Test', () => {
+//     it('should CRUD test with three dots', async () => {
+//         for (let i = 0; i < new stuff().phoneTypesList.length; i++){
+//             await new daCode().createUserP(i);
+//             await expect(new stuff().userDoubleClick1).toBeExisting();
+//             await new daCode().editUserP(0);
+//             await expect(new stuff().userDoubleClick2).toBeExisting();
+//             await new daCode().deleteUserP(0);
+//             await expect(new stuff().userDoubleClick2).not.toBeExisting();
+//         }
+//     })
+// })
+
+//Positive CRUD test with hover
+describe('Light Test', () => {
+    it('should CRUD test with hover', async () => {
+        for (let i = 0; i < new stuff().phoneTypesList.length; i++){
+            await new daCode().createUserP(i);
+            await expect(new stuff().userDoubleClick1).toBeExisting();
+            await new daCode().editUserP(1);
+            await expect(new stuff().userDoubleClick2).toBeExisting();
+            await new daCode().deleteUserP(1);
+            await expect(new stuff().userDoubleClick2).not.toBeExisting();
+        }
+    })
+})
 
 
 
@@ -31,5 +57,36 @@ describe('Test', () => {
     it('should switch mode to dark', async () => {
         await new daCode().darkModeCheck();
         await expect(new stuff().darkModeOn).toBeDisplayed();
+    })
+})
+
+
+//The CRUD tests a.k.a.  H E double hockey sticks
+
+//Positive CRUD test with three dots
+describe('Dark Test', () => {
+    it('should CRUD test with three dots', async () => {
+        for (let i = 0; i < new stuff().phoneTypesList.length; i++){
+            await new daCode().createUserP(i);
+            await expect(new stuff().userDoubleClick1).toBeExisting();
+            await new daCode().editUserP(0);
+            await expect(new stuff().userDoubleClick2).toBeExisting();
+            await new daCode().deleteUserP(0);
+            await expect(new stuff().userDoubleClick2).not.toBeExisting();
+        }
+    })
+})
+
+//Positive CRUD test with hover
+describe('Dark Test', () => {
+    it('should CRUD test with hover', async () => {
+        for (let i = 0; i < new stuff().phoneTypesList.length; i++){
+            await new daCode().createUserP(i);
+            await expect(new stuff().userDoubleClick1).toBeExisting();
+            await new daCode().editUserP(1);
+            await expect(new stuff().userDoubleClick2).toBeExisting();
+            await new daCode().deleteUserP(1);
+            await expect(new stuff().userDoubleClick2).not.toBeExisting();
+        }
     })
 })

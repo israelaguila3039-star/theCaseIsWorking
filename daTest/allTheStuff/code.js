@@ -175,26 +175,58 @@ export default class daCode {
 
     async createUserP (i) {
         await this.sT.addUserButton.click();
-        await this.funcs.giveBoxValue(this.sT.userNameBox, this.wH.userNameP);
-        await this.funcs.giveBoxValue(this.sT.userEmailBox, this.wH.userNameP);
-        await this.funcs.giveBoxValue(this.sT.userAddressBox, this.wH.userNameP);
-        await this.funcs.giveBoxValue(this.sT.userAddress2Box, this.wH.userNameP);
-        await this.funcs.giveBoxValue(this.sT.userPhoneBox, this.wH.userNameP);
-        await this.funcs.giveBoxValue(this.sT.userCityBox, this.wH.userNameP);
-        await this.funcs.giveBoxValue(this.sT.userStateBox, this.wH.userNameP);
-        await this.funcs.giveBoxValue(this.sT.userZipBox, this.wH.userNameP);
+        for (let e = 0; e < this.sT.userBoxes.length; e++) {
+            await this.funcs.giveBoxValue(this.sT.userBoxes[e], this.wH.userBoxP[e])
+        }
         await this.sT.userPTypeBox.click();
         await this.sT.phoneTypesList[i].click();
         await this.sT.submitUserBtn.click();
+        await this.sT.dismissBtn.click();
+        await this.sT.userDoubleClick1.waitForExist({ timeout: 5000 });
     }
 
     async editUserP (i) {
-        if (i = 0) {
-            await this.sT.userDots1.waitForClickable({ timeout: 5000 });
+        if (i === 0) {
+            await this.sT.userDots1.waitForExist({ timeout: 5000 });
+            await this.sT.userDots1.moveTo();
             await this.sT.userDots1.click();
-            await this.sT.userDotsEdit1.waitForClickable({ timeout: 5000 });
+            await this.sT.userDotsEdit1.waitForExist({ timeout: 5000 });
             await this.sT.userDotsEdit1.click();
+        } else if (i === 1) {
+            await this.sT.userDoubleClick1.moveTo();
+            await this.sT.userEdit1.waitForDisplayed({ timeout: 5000 });
+            await this.sT.userEdit1.click();
         }
+        for (let e = 0; e < this.sT.userEBoxes.length; e++) {
+            await this.funcs.clearBoxValue(this.sT.userEBoxes[e])
+            await this.funcs.giveBoxValue(this.sT.userEBoxes[e], this.wH.userBoxPE[e])
+        }
+        await this.sT.updateButton.waitForClickable({ timeout: 5000 });
+        await this.sT.updateButton.moveTo()
+        await this.sT.updateButton.click();
+        await this.sT.updateButton.waitForClickable({ timeout: 5000, reverse: true})
+        await this.sT.usersSettings.waitForClickable({ timeout: 5000 });
+        await this.sT.usersSettings.click();
+        await this.funcs.refreshPage();
+        await this.sT.userDoubleClick2.waitForExist({ timeout: 5000 });
+    }
+
+    async deleteUserP (i) {
+        if (i === 0) {
+            await this.sT.userDots2.waitForExist({ timeout: 5000 });
+            await this.sT.userDots2.moveTo();
+            await this.sT.userDots2.click();
+            await this.sT.userDotsDelete1.waitForExist({ timeout: 5000 });
+            await this.sT.userDotsDelete1.click();
+        } else if (i === 1) {
+            await this.sT.userDoubleClick2.moveTo();
+            await this.sT.userDelete2.waitForDisplayed({ timeout: 5000 });
+            await this.sT.userDelete2.click();
+        }
+        await this.sT.confirmDelete.waitForClickable({ timeout: 5000 });
+        await this.sT.confirmDelete.click()
+        await this.funcs.refreshPage();
+        await this.sT.userDoubleClick2.waitForExist({ timeout: 5000, reverse: true });
     }
 
 };

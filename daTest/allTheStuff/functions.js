@@ -117,4 +117,13 @@ export default class itFunctions {
             await box.click();
         } 
     }
+
+    async creatArray(...values) {
+        return values;
+    }
+
+    async refreshPage () {
+        await browser.refresh();
+    }
+
 }

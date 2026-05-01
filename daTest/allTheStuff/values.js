@@ -84,21 +84,44 @@ export default class whut {
         return "+1 (555) 123-4567"
     }
 
+    get userPhonePE () {
+        return "+1 (555) 098-7654"
+    }
+
     get userCityP () {
         return "Springfield"
+    }
+
+    get userCityPE () {
+        return "Franklin"
     }
 
     get userStateP () {
         return "IL"
     }
 
+    get userStatePE () {
+        return "AL"
+    }
+
     get userZipP () {
         return "62704"
     }
 
-    get amountOfEditAndDeleteOptions () {
-        return 3
-        //More like 4 cuz of 0
+    get userZipPE () {
+        return "36444"
+    }
+
+    get userHoursPE () {
+        return "6"
+    }
+
+    get userBoxP () {
+        return [this.userNameP, this.userEmailP, this.userAddressP, this.userAddress2P, this.userPhoneP, this.userCityP, this.userStateP, this.userZipP];
+    }
+
+    get userBoxPE () {
+        return [this.userNamePE, this.userAddressPE, this.userAddress2PE, this.userPhonePE, this.userCityPE, this.userStatePE, this.userZipPE, this.userHoursPE]
     }
 
 }

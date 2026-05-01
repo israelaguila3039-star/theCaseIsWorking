@@ -187,12 +187,18 @@ export default class stuff {
         return $('input[data-testid="user-dialog-zip"]');
     }
 
+    get userBoxes () {
+        return [$('input[data-testid="user-dialog-name"]'), $('input[data-testid="user-dialog-username"]'), $('input[data-testid="user-dialog-address1"]'), 
+            $('input[data-testid="user-dialog-address2"]'), $('input[data-testid="user-dialog-phone"]'), $('input[data-testid="user-dialog-city"]'), 
+            $('input[data-testid="user-dialog-state"]'), $('input[data-testid="user-dialog-zip"]')];
+    }
+
     get userPTypeBox () {
         return $('select[data-testid="user-dialog-phone-type"]');
     }
 
     get phoneTypesList () {
-        return [$x('//option[text()="Select phone type"]'), $('//option[text()="Office"]'),
+        return [$('//option[text()="Select phone type"]'), $('//option[text()="Office"]'),
             $('//option[text()="Cell"]'), $('//option[text()="Other"]')];
     }
 
@@ -204,12 +210,24 @@ export default class stuff {
         return $('//button[@aria-label="More items"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
     }
 
+    get userDots2 () {
+        return $('//button[@aria-label="More items"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="NameTemplate"]]');
+    }
+
     get userDoubleClick1 () {
-        return $x('//span[text()="TemplateName"]');
+        return $('//span[text()="TemplateName"]');
+    }
+
+    get userDoubleClick2 () {
+        return $('//span[text()="NameTemplate"]');
     }
 
     get userDelete1 () {
         return $('//button[@aria-label="Delete"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
+    }
+
+    get userDelete2 () {
+        return $('//button[@aria-label="Delete"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="NameTemplate"]]');
     }
     
     get userEdit1 () {
@@ -222,6 +240,62 @@ export default class stuff {
 
     get userDotsEdit1 () {
         return $('div[data-testid="custom-data-table-context-menu-item-Edit"]');
+    }
+
+    get userNameEBox () {
+        return $('input[data-testid="edit-user-name-input"]');
+    }
+
+    get userEmailEBox () {
+        return $('input[data-testid="edit-user-username-input"]');
+    }
+
+    get userAddressEBox () {
+        return $('input[data-testid="edit-user-address1-input"]');
+    }
+
+    get userAddress2EBox () {
+        return $('input[data-testid="edit-user-address2-input"]');
+    }
+
+    get userPhoneEBox () {
+        return $('input[data-testid="edit-user-phone-input"]');
+    }
+
+    get userCityEBox () {
+        return $('input[data-testid="edit-user-city-input"]');
+    }
+
+    get userStateEBox () {
+        return $('input[data-testid="edit-user-state-input"]');
+    }
+
+    get userZipEBox () {
+        return $('input[data-testid="edit-user-zip-input"]');
+    }
+
+    get userPTypeEBox () {
+        return $('select[data-testid="edit-user-phone-type-select"]');
+    }
+
+    get userHoursEBox () {
+        return $('input[data-testid="edit-user-expected-hours-input"]');
+    }
+
+    get userBoxes () {
+        return [this.userNameBox, this.userEmailBox, this.userAddressBox, this.userAddress2Box, this.userPhoneBox, this.userCityBox, this.userStateBox, this.userZipBox];
+    }
+
+    get userEBoxes () {
+        return [this.userNameEBox, this.userAddressEBox, this.userAddress2EBox, this.userPhoneEBox, this.userCityEBox, this.userStateEBox, this.userZipEBox, this.userHoursEBox];
+    }
+
+    get confirmDelete () {
+        return $('button[data-testid="confirmation-dialog-confirm-button"]');
+    }
+
+    get dismissBtn () {
+        return $('//span[text()="Dismiss"]');
     }
 
 };
