@@ -132,7 +132,7 @@ export default class stuff {
     }
 
     get deleteLettersNCT () {
-        return $('button[data-testid="case-data-type-lettersTesting"]');
+        return $('button[data-testid="case-data-type-lettersTestingP"]');
     }
 
     get addNCT () {
@@ -140,7 +140,7 @@ export default class stuff {
     }
 
     get deleteNumbersNCT () {
-        return $('button[data-testid="case-data-type-0892476153"]');
+        return $('button[data-testid="case-data-type-3892476150"]');
     }
 
     get expenseTBox () {
@@ -207,11 +207,11 @@ export default class stuff {
     }
 
     get userDots1 () {
-        return $('//button[@aria-label="More items"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
+        return $('//button[@aria-label="More items"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___x1vas00 f19n0e5 f1ewtqcl f1jazu75 f1xeqee6 f1dxfoyt f2krc9w f1wfn5kd f1g4hkjv f15ngxrw fjbbrdp f1t94bn6 feu1g3u f1uorfem fw60kww f1v3eptx f8gmj8i f1ap8nzx f1igan7k fjag8bx f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
     }
 
     get userDots2 () {
-        return $('//button[@aria-label="More items"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="NameTemplate"]]');
+        return $('//button[@aria-label="More items"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___x1vas00 f19n0e5 f1ewtqcl f1jazu75 f1xeqee6 f1dxfoyt f2krc9w f1wfn5kd f1g4hkjv f15ngxrw fjbbrdp f1t94bn6 feu1g3u f1uorfem fw60kww f1v3eptx f8gmj8i f1ap8nzx f1igan7k fjag8bx f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="NameTemplate"]]');
     }
 
     get userDoubleClick1 () {
@@ -223,15 +223,15 @@ export default class stuff {
     }
 
     get userDelete1 () {
-        return $('//button[@aria-label="Delete"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
+        return $('//button[@aria-label="Delete"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___x1vas00 f19n0e5 f1ewtqcl f1jazu75 f1xeqee6 f1dxfoyt f2krc9w f1wfn5kd f1g4hkjv f15ngxrw fjbbrdp f1t94bn6 feu1g3u f1uorfem fw60kww f1v3eptx f8gmj8i f1ap8nzx f1igan7k fjag8bx f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
     }
 
     get userDelete2 () {
-        return $('//button[@aria-label="Delete"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="NameTemplate"]]');
+        return $('//button[@aria-label="Delete"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___x1vas00 f19n0e5 f1ewtqcl f1jazu75 f1xeqee6 f1dxfoyt f2krc9w f1wfn5kd f1g4hkjv f15ngxrw fjbbrdp f1t94bn6 feu1g3u f1uorfem fw60kww f1v3eptx f8gmj8i f1ap8nzx f1igan7k fjag8bx f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="NameTemplate"]]');
     }
     
     get userEdit1 () {
-        return $('//button[@aria-label="Edit"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___rq4ttb0 f19n0e5 f1ewtqcl f1dxfoyt f2krc9w f1jazu75 fw60kww f1xeqee6 f1wfn5kd f1g4hkjv f15ngxrw f1t94bn6 feu1g3u f1uorfem f4xjyn1 ff1wgvm fiob0tu f1j6scgf f1x4h75k f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
+        return $('//button[@aria-label="Edit"][ancestor::div[@class="fui-DataGridRow fui-TableRow ___x1vas00 f19n0e5 f1ewtqcl f1jazu75 f1xeqee6 f1dxfoyt f2krc9w f1wfn5kd f1g4hkjv f15ngxrw fjbbrdp f1t94bn6 feu1g3u f1uorfem fw60kww f1v3eptx f8gmj8i f1ap8nzx f1igan7k fjag8bx f1facbz3 f22iagw f122n59 fg1dust fv1gydk"]//*/span[text()="TemplateName"]]');
     }
 
     get userDotsDelete1 () {
@@ -296,6 +296,37 @@ export default class stuff {
 
     get dismissBtn () {
         return $('//span[text()="Dismiss"]');
+    }
+
+    get newCSTypesList () {
+        return [$('[data-testid="add-case-status-New"]'), $('[data-testid="add-case-status-Active"]'), $('[data-testid="add-case-status-Completed"]'), 
+            $('[data-testid="add-case-status-Closed"]'), $('[data-testid="add-case-status-Removed"]')];
+    }
+
+    get nameNCSBox () {
+        return $('[data-testid="add-edit-status-status-input"]');
+    }
+
+    get descriptionNCSBox () {
+        return $('[data-testid="add-edit-status-description-input"]');
+    }
+
+    get editLettersNCSList () {
+        return [$('button[data-testid="case-status-edit-New-lettersTestingP"]'), $('button[data-testid="case-status-edit-Active-lettersTestingP"]'), $('button[data-testid="case-status-edit-Completed-lettersTestingP"]'), 
+            $('button[data-testid="case-status-edit-Closed-lettersTestingP"]'), $('button[data-testid="case-status-edit-Removed-lettersTestingP"]')];
+    }
+
+    get deleteLettersNCSList () {
+        return [$('button[data-testid="case-status-remove-New-lettersTestingP"]'), $('button[data-testid="case-status-remove-Active-lettersTestingP"]'), $('button[data-testid="case-status-remove-Completed-lettersTestingP"]'), 
+            $('button[data-testid="case-status-remove-Closed-lettersTestingP"]'), $('button[data-testid="case-status-remove-Removed-lettersTestingP"]')];
+    }
+
+    get saveNCSBtn () {
+        return $('button[data-testid="add-edit-status-save-button"]');
+    }
+
+    get hoverLettersNCS () {
+        return $('//span[text()="lettersTestingP"]');
     }
 
 };

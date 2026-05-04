@@ -41,11 +41,11 @@ export default class whut {
     }
 
     get lettersNCTName () {
-        return "lettersTesting"
+        return "lettersTestingP"
     }
 
     get numbersNCTName () {
-        return "0892476153"
+        return "3892476150"
     }
 
     get userNameP () {
@@ -122,6 +122,22 @@ export default class whut {
 
     get userBoxPE () {
         return [this.userNamePE, this.userAddressPE, this.userAddress2PE, this.userPhonePE, this.userCityPE, this.userStatePE, this.userZipPE, this.userHoursPE]
+    }
+
+    get descriptionLetters1 () {
+        return "This is a template and I do not know how you are reading this"
+    }
+
+    get descriptionLetters2 () {
+        return "Hello, this is another template to see if the editing works well enough. Do not know how I will confirm this but I will see"
+    }
+
+    get descriptionNumbers1 () {
+        return "97235857386259335"
+    }
+
+    get descriptionNumbers2 () {
+        return "79286359803652936859180396532956235609235"
     }
 
 }

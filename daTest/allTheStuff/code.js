@@ -160,6 +160,33 @@ export default class daCode {
         await this.sT.deleteNumbersNCT.click();
     }
 
+    async createLettersNCS (i) {
+            await this.sT.newCSTypesList[i].click()
+            await this.funcs.clearBoxValue(this.sT.nameNCSBox);
+            await this.funcs.giveBoxValue(this.sT.nameNCSBox, this.wH.lettersNCTName);
+            await this.funcs.clearBoxValue(this.sT.descriptionNCSBox);
+            await this.funcs.giveBoxValue(this.sT.descriptionNCSBox, this.wH.descriptionLetters1);
+            await this.sT.saveNCSBtn.click();
+            await this.sT.hoverLettersNCS.waitForExist({ timeout: 5000 });
+    }
+
+    async editLettersNCS (i) {
+        await this.sT.hoverLettersNCS.moveTo();
+        await this.sT.editLettersNCSList[i].moveTo();
+        await this.sT.editLettersNCSList[i].click();
+        await this.sT.descriptionNCSBox.waitForExist({ timeout: 5000 });
+        await this.funcs.clearBoxValue(this.sT.descriptionNCSBox);
+        await this.funcs.giveBoxValue(this.sT.descriptionNCSBox, this.wH.descriptionLetters2);
+        await this.sT.saveNCSBtn.click();
+    }
+
+    async deleteLettersNCS (i) {
+        await this.sT.hoverLettersNCS.moveTo();
+        await this.sT.deleteLettersNCSList[i].moveTo();
+        await this.sT.deleteLettersNCSList[i].click();
+        await this.sT.hoverLettersNCS.waitForExist({ timeout: 5000 });
+    }
+
     async createLettersNET () {
         await this.funcs.clearBoxValue(this.sT.expenseTBox);
         await this.funcs.giveBoxValue(this.sT.expenseTBox, this.wH.lettersNCTName);
@@ -174,6 +201,7 @@ export default class daCode {
     }
 
     async createUserP (i) {
+        await this.funcs.noDimsiss();
         await this.sT.addUserButton.click();
         for (let e = 0; e < this.sT.userBoxes.length; e++) {
             await this.funcs.giveBoxValue(this.sT.userBoxes[e], this.wH.userBoxP[e])
@@ -186,9 +214,11 @@ export default class daCode {
     }
 
     async editUserP (i) {
+        await this.funcs.noDimsiss();
         if (i === 0) {
             await this.sT.userDots1.waitForExist({ timeout: 5000 });
             await this.sT.userDots1.moveTo();
+            await this.sT.userDots1.waitForDisplayed({ timeout: 5000 });
             await this.sT.userDots1.click();
             await this.sT.userDotsEdit1.waitForExist({ timeout: 5000 });
             await this.sT.userDotsEdit1.click();
@@ -207,14 +237,15 @@ export default class daCode {
         await this.sT.updateButton.waitForClickable({ timeout: 5000, reverse: true})
         await this.sT.usersSettings.waitForClickable({ timeout: 5000 });
         await this.sT.usersSettings.click();
-        await this.funcs.refreshPage();
         await this.sT.userDoubleClick2.waitForExist({ timeout: 5000 });
     }
 
     async deleteUserP (i) {
+        await this.funcs.noDimsiss();
         if (i === 0) {
             await this.sT.userDots2.waitForExist({ timeout: 5000 });
             await this.sT.userDots2.moveTo();
+            await this.sT.userDots2.waitForDisplayed({ timeout: 5000 });
             await this.sT.userDots2.click();
             await this.sT.userDotsDelete1.waitForExist({ timeout: 5000 });
             await this.sT.userDotsDelete1.click();
@@ -224,9 +255,9 @@ export default class daCode {
             await this.sT.userDelete2.click();
         }
         await this.sT.confirmDelete.waitForClickable({ timeout: 5000 });
-        await this.sT.confirmDelete.click()
-        await this.funcs.refreshPage();
-        await this.sT.userDoubleClick2.waitForExist({ timeout: 5000, reverse: true });
+        await this.sT.confirmDelete.click();
+        await this.sT.userDoubleClick2.waitForExist({ timeout: 10000, reverse:true });
+        await this.sT.userDoubleClick1.waitForExist({ timeout: 10000, reverse:true });
     }
 
 };

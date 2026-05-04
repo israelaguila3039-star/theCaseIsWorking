@@ -118,12 +118,19 @@ export default class itFunctions {
         } 
     }
 
-    async creatArray(...values) {
+    async createArray(...values) {
         return values;
     }
 
     async refreshPage () {
         await browser.refresh();
+    }
+
+    async noDimsiss () {
+        if (await this.sT.dismissBtn.isExisting({ timeout: 5000 })) {
+            this.sT.dismissBtn.click();
+        }
+        await this.sT.dismissBtn.isExisting({ reverse: true });
     }
 
 }
