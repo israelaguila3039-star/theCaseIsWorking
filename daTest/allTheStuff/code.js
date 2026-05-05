@@ -161,18 +161,22 @@ export default class daCode {
     }
 
     async createLettersNCS (i) {
-            await this.sT.newCSTypesList[i].click()
-            await this.funcs.clearBoxValue(this.sT.nameNCSBox);
+            await this.funcs.noDimsiss();
+            await this.sT.newCSTypesList[i].moveTo();
+            await this.funcs.forcedPause();
+            await this.sT.newCSTypesList[i].click();
+            await this.funcs.forcedPause();
+            await this.sT.nameNCSBox.waitForExist({ timeout: 5000 });
             await this.funcs.giveBoxValue(this.sT.nameNCSBox, this.wH.lettersNCTName);
-            await this.funcs.clearBoxValue(this.sT.descriptionNCSBox);
             await this.funcs.giveBoxValue(this.sT.descriptionNCSBox, this.wH.descriptionLetters1);
             await this.sT.saveNCSBtn.click();
             await this.sT.hoverLettersNCS.waitForExist({ timeout: 5000 });
     }
 
     async editLettersNCS (i) {
+        await this.funcs.noDimsiss();
         await this.sT.hoverLettersNCS.moveTo();
-        await this.sT.editLettersNCSList[i].moveTo();
+        await this.sT.editLettersNCSList[i].waitForDisplayed({ timeout: 5000 });
         await this.sT.editLettersNCSList[i].click();
         await this.sT.descriptionNCSBox.waitForExist({ timeout: 5000 });
         await this.funcs.clearBoxValue(this.sT.descriptionNCSBox);
@@ -181,8 +185,9 @@ export default class daCode {
     }
 
     async deleteLettersNCS (i) {
+        await this.funcs.noDimsiss();
         await this.sT.hoverLettersNCS.moveTo();
-        await this.sT.deleteLettersNCSList[i].moveTo();
+        await this.sT.deleteLettersNCSList[i].waitForDisplayed({ timeout: 5000 });
         await this.sT.deleteLettersNCSList[i].click();
         await this.sT.hoverLettersNCS.waitForExist({ timeout: 5000 });
     }

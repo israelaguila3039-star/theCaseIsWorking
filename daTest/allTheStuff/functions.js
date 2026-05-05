@@ -87,11 +87,13 @@ export default class itFunctions {
     }
 
     async giveBoxValue (box, value) {
+        await box.waitForClickable({ timeout: 5000 });
         await box.click();
         await box.setValue(value);
     }
 
     async clearBoxValue (box) {
+        await box.waitForClickable({ timeout: 5000 });
         await box.click();
         await browser.keys(['Command', 'a']);
         await browser.keys('Backspace');
@@ -131,6 +133,10 @@ export default class itFunctions {
             this.sT.dismissBtn.click();
         }
         await this.sT.dismissBtn.isExisting({ reverse: true });
+    }
+
+    async forcedPause () {
+        await browser.pause(5000);
     }
 
 }

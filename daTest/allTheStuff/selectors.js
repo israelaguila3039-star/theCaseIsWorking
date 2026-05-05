@@ -299,16 +299,16 @@ export default class stuff {
     }
 
     get newCSTypesList () {
-        return [$('[data-testid="add-case-status-New"]'), $('[data-testid="add-case-status-Active"]'), $('[data-testid="add-case-status-Completed"]'), 
-            $('[data-testid="add-case-status-Closed"]'), $('[data-testid="add-case-status-Removed"]')];
+        return [$('button[data-testid="add-case-status-New"]'), $('button[data-testid="add-case-status-Active"]'), $('button[data-testid="add-case-status-Completed"]'), 
+            $('button[data-testid="add-case-status-Closed"]'), $('button[data-testid="add-case-status-Removed"]')];
     }
 
     get nameNCSBox () {
-        return $('[data-testid="add-edit-status-status-input"]');
+        return $('input[data-testid="add-edit-status-status-input"]');
     }
 
     get descriptionNCSBox () {
-        return $('[data-testid="add-edit-status-description-input"]');
+        return $('textarea[data-testid="add-edit-status-description-input"]');
     }
 
     get editLettersNCSList () {
@@ -327,6 +327,10 @@ export default class stuff {
 
     get hoverLettersNCS () {
         return $('//span[text()="lettersTestingP"]');
+    }
+
+    get addingPopUp () {
+        return $('[class="fui-DialogBody rhwx3p8"]');
     }
 
 };
