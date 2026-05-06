@@ -329,8 +329,8 @@ export default class stuff {
         return $('//span[text()="lettersTestingP"]');
     }
 
-    get addingPopUp () {
-        return $('[class="fui-DialogBody rhwx3p8"]');
+    get hoverCheckForCreate () {
+        return $('//div/div[contains(text(), "Create new")]');
     }
 
 };

@@ -163,14 +163,20 @@ export default class daCode {
     async createLettersNCS (i) {
             await this.funcs.noDimsiss();
             await this.sT.newCSTypesList[i].moveTo();
-            await this.funcs.forcedPause();
+            
+            //BIG issue here, the click below here as in below all these checks has the pop up appear but it disappears immediately, I added (temporarily and previously) a pause before and it worked
+            //these waitFor's are meant to check for certain things such as hovering over the button but they have been very inconsistent
+
+            await this.sT.hoverCheckForCreate.waitForDisplayed({ timeout: 5000 });
+            await this.sT.hoverCheckForCreate.waitForStable({ timeout: 5000 });
+            await this.sT.newCSTypesList[i].waitForStable({ timeout: 5000 });
+            await this.sT.hoverCheckForCreate.waitForDisplayed({ reverse: true, timeout: 5000 });
             await this.sT.newCSTypesList[i].click();
-            await this.funcs.forcedPause();
             await this.sT.nameNCSBox.waitForExist({ timeout: 5000 });
             await this.funcs.giveBoxValue(this.sT.nameNCSBox, this.wH.lettersNCTName);
             await this.funcs.giveBoxValue(this.sT.descriptionNCSBox, this.wH.descriptionLetters1);
             await this.sT.saveNCSBtn.click();
-            await this.sT.hoverLettersNCS.waitForExist({ timeout: 5000 });
+            await this.sT.hoverLettersNCS.waitForExist({ timeout: 7000 });
     }
 
     async editLettersNCS (i) {

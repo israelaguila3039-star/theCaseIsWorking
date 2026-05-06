@@ -135,8 +135,4 @@ export default class itFunctions {
         await this.sT.dismissBtn.isExisting({ reverse: true });
     }
 
-    async forcedPause () {
-        await browser.pause(5000);
-    }
-
 }

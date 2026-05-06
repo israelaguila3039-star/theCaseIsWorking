@@ -23,24 +23,24 @@ describe('Test', () => {
 //New Case Type tests
 
 //Create & delete letters
-// describe('Light Test', () => {
-//     it('should input and delete letters', async () => {
-//         await new daCode().createLettersNCT();
-//         await expect(new stuff().deleteLettersNCT).toBeExisting();
-//         await new daCode().deleteLettersNCT();
-//         await expect(new stuff().deleteLettersNCT).not.toBeExisting();
-//     })
-// })
+describe('Light Test', () => {
+    it('should input and delete letters', async () => {
+        await new daCode().createLettersNCT();
+        await expect(new stuff().deleteLettersNCT).toBeExisting();
+        await new daCode().deleteLettersNCT();
+        await expect(new stuff().deleteLettersNCT).not.toBeExisting();
+    })
+})
 
 //Create & delete numbers
-// describe('Light Test', () => {
-//     it('should input and delete numbers', async () => {
-//         await new daCode().createNumbersNCT();
-//         await expect(new stuff().deleteNumbersNCT).toBeExisting();
-//         await new daCode().deleteNumbersNCT();
-//         await expect(new stuff().deleteNumbersNCT).not.toBeExisting();
-//     })
-// })
+describe('Light Test', () => {
+    it('should input and delete numbers', async () => {
+        await new daCode().createNumbersNCT();
+        await expect(new stuff().deleteNumbersNCT).toBeExisting();
+        await new daCode().deleteNumbersNCT();
+        await expect(new stuff().deleteNumbersNCT).not.toBeExisting();
+    })
+})
 
 
 //New Expense Type tests (Does not work because they can't be deleted at all)
@@ -56,21 +56,21 @@ describe('Test', () => {
 // })
 
 
-//Case Statuses tests
+//Case Statuses tests - Does not work right now due to issues explained in its code
 
 //Letters CRUD
-describe('Light Test', () => {
-    it('should perform CRUD with letters', async () => {
-        for (let i = 0; i < new stuff().newCSTypesList.length; i++) {
-            await new daCode().createLettersNCS(i);
-            await expect(new stuff().hoverLettersNCS).toBeExisting();
-            await new daCode().editLettersNCS(i);
-            await expect(new stuff().hoverLettersNCS).toBeExisting();
-            await new daCode().deleteLettersNCS(i);
-            await expect(new stuff().hoverLettersNCS).not.toBeExisting();
-        }
-    })
-})
+// describe('Light Test', () => {
+//     it('should perform CRUD with letters', async () => {
+//         for (let i = 0; i < new stuff().newCSTypesList.length; i++) {
+//             await new daCode().createLettersNCS(i);
+//             await expect(new stuff().hoverLettersNCS).toBeExisting();
+//             await new daCode().editLettersNCS(i);
+//             await expect(new stuff().hoverLettersNCS).toBeExisting();
+//             await new daCode().deleteLettersNCS(i);
+//             await expect(new stuff().hoverLettersNCS).not.toBeExisting();
+//         }
+//     })
+// })
 
 //Numbers CRUD
 
@@ -90,24 +90,24 @@ describe('Test', () => {
 //New Case Type tests
 
 //Create & delete letters
-// describe('Dark Test', () => {
-//     it('should input and delete letters', async () => {
-//         await new daCode().createLettersNCT();
-//         await expect(new stuff().deleteLettersNCT).toBeExisting();
-//         await new daCode().deleteLettersNCT();
-//         await expect(new stuff().deleteLettersNCT).not.toBeExisting();
-//     })
-// })
+describe('Dark Test', () => {
+    it('should input and delete letters', async () => {
+        await new daCode().createLettersNCT();
+        await expect(new stuff().deleteLettersNCT).toBeExisting();
+        await new daCode().deleteLettersNCT();
+        await expect(new stuff().deleteLettersNCT).not.toBeExisting();
+    })
+})
 
 //Create & delete numbers
-// describe('Dark Test', () => {
-//     it('should input and delete numbers', async () => {
-//         await new daCode().createNumbersNCT();
-//         await expect(new stuff().deleteNumbersNCT).toBeExisting();
-//         await new daCode().deleteNumbersNCT();
-//         await expect(new stuff().deleteNumbersNCT).not.toBeExisting();
-//     })
-// })
+describe('Dark Test', () => {
+    it('should input and delete numbers', async () => {
+        await new daCode().createNumbersNCT();
+        await expect(new stuff().deleteNumbersNCT).toBeExisting();
+        await new daCode().deleteNumbersNCT();
+        await expect(new stuff().deleteNumbersNCT).not.toBeExisting();
+    })
+})
 
 
 //New Expense Type tests (Does not work because they can't be deleted at all)
@@ -123,7 +123,7 @@ describe('Test', () => {
 // })
 
 
-//Case Statuses tests
+//Case Statuses tests - Does not work right now due to issues explained in its code
 
 //Letters CRUD
 // describe('Dark Test', () => {
