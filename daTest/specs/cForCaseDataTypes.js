@@ -43,19 +43,6 @@ describe('Light Test', () => {
 })
 
 
-//New Expense Type tests (Does not work because they can't be deleted at all)
-
-//Create & delete letter
-// describe('Light Test', () => {
-//     it('should input and delete letters', async () => {
-//         await new daCode().createLettersNET();
-//         await expect(new stuff().deleteLettersNCT).toBeExisting();
-//         await new daCode().deleteLettersNET();
-//         await expect(new stuff().deleteLettersNCT).not.toBeExisting();
-//     })
-// })
-
-
 //Case Statuses tests - Does not work right now due to issues explained in its code
 
 //Letters CRUD
@@ -108,19 +95,6 @@ describe('Dark Test', () => {
         await expect(new stuff().deleteNumbersNCT).not.toBeExisting();
     })
 })
-
-
-//New Expense Type tests (Does not work because they can't be deleted at all)
-
-//Create & delete letter
-// describe('Dark Test', () => {
-//     it('should input and delete letters', async () => {
-//         await new daCode().createLettersNET();
-//         await expect(new stuff().deleteLettersNCT).toBeExisting();
-//         await new daCode().deleteLettersNET();
-//         await expect(new stuff().deleteLettersNCT).not.toBeExisting();
-//     })
-// })
 
 
 //Case Statuses tests - Does not work right now due to issues explained in its code

@@ -126,6 +126,7 @@ export default class itFunctions {
 
     async refreshPage () {
         await browser.refresh();
+        await this.sT.pageStableCheck.waitForStable({ timeout: 10000 });
     }
 
     async noDimsiss () {

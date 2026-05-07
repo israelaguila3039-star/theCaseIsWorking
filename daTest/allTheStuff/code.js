@@ -161,22 +161,22 @@ export default class daCode {
     }
 
     async createLettersNCS (i) {
-            await this.funcs.noDimsiss();
-            await this.sT.newCSTypesList[i].moveTo();
+        await this.funcs.noDimsiss();
+        await this.sT.newCSTypesList[i].moveTo();
             
-            //BIG issue here, the click below here as in below all these checks has the pop up appear but it disappears immediately, I added (temporarily and previously) a pause before and it worked
-            //these waitFor's are meant to check for certain things such as hovering over the button but they have been very inconsistent
+        //BIG issue here, the click below here as in below all these checks has the pop up appear but it disappears immediately, I added (temporarily and previously) a pause before and it worked
+        //these waitFor's are meant to check for certain things such as hovering over the button but they have been very inconsistent
 
-            await this.sT.hoverCheckForCreate.waitForDisplayed({ timeout: 5000 });
-            await this.sT.hoverCheckForCreate.waitForStable({ timeout: 5000 });
-            await this.sT.newCSTypesList[i].waitForStable({ timeout: 5000 });
-            await this.sT.hoverCheckForCreate.waitForDisplayed({ reverse: true, timeout: 5000 });
-            await this.sT.newCSTypesList[i].click();
-            await this.sT.nameNCSBox.waitForExist({ timeout: 5000 });
-            await this.funcs.giveBoxValue(this.sT.nameNCSBox, this.wH.lettersNCTName);
-            await this.funcs.giveBoxValue(this.sT.descriptionNCSBox, this.wH.descriptionLetters1);
-            await this.sT.saveNCSBtn.click();
-            await this.sT.hoverLettersNCS.waitForExist({ timeout: 7000 });
+        await this.sT.hoverCheckForCreate.waitForDisplayed({ timeout: 5000 });
+        await this.sT.hoverCheckForCreate.waitForStable({ timeout: 5000 });
+        await this.sT.newCSTypesList[i].waitForStable({ timeout: 5000 });
+        await this.sT.hoverCheckForCreate.waitForDisplayed({ reverse: true, timeout: 5000 });
+        await this.sT.newCSTypesList[i].click();
+        await this.sT.nameNCSBox.waitForExist({ timeout: 5000 });
+        await this.funcs.giveBoxValue(this.sT.nameNCSBox, this.wH.lettersNCTName);
+        await this.funcs.giveBoxValue(this.sT.descriptionNCSBox, this.wH.descriptionLetters1);
+        await this.sT.saveNCSBtn.click();
+        await this.sT.hoverLettersNCS.waitForExist({ timeout: 7000 });
     }
 
     async editLettersNCS (i) {
@@ -198,29 +198,17 @@ export default class daCode {
         await this.sT.hoverLettersNCS.waitForExist({ timeout: 5000 });
     }
 
-    async createLettersNET () {
-        await this.funcs.clearBoxValue(this.sT.expenseTBox);
-        await this.funcs.giveBoxValue(this.sT.expenseTBox, this.wH.lettersNCTName);
-        await this.sT.addNET.waitForClickable({ timeout: 5000 });
-        await this.sT.addNET.click();
-    }
-
-    async deleteLettersNET () {
-        await this.sT.deleteLettersNCT.waitForExist({ timeout: 5000 });
-        await this.sT.deleteLettersNCT.moveTo();
-        await this.sT.deleteLettersNCT.click();
-    }
-
     async createUserP (i) {
+        await this.funcs.refreshPage();
         await this.funcs.noDimsiss();
         await this.sT.addUserButton.click();
-        for (let e = 0; e < this.sT.userBoxes.length; e++) {
-            await this.funcs.giveBoxValue(this.sT.userBoxes[e], this.wH.userBoxP[e])
+        for (let m = 0; m < this.sT.userBoxes.length; m++) {
+            await this.funcs.giveBoxValue(this.sT.userBoxes[m], this.wH.userBoxP[m])
         }
         await this.sT.userPTypeBox.click();
         await this.sT.phoneTypesList[i].click();
         await this.sT.submitUserBtn.click();
-        await this.sT.dismissBtn.click();
+        await this.funcs.noDimsiss();
         await this.sT.userDoubleClick1.waitForExist({ timeout: 5000 });
     }
 
@@ -253,6 +241,7 @@ export default class daCode {
 
     async deleteUserP (i) {
         await this.funcs.noDimsiss();
+        await this.funcs.refreshPage();
         if (i === 0) {
             await this.sT.userDots2.waitForExist({ timeout: 5000 });
             await this.sT.userDots2.moveTo();
@@ -260,7 +249,8 @@ export default class daCode {
             await this.sT.userDots2.click();
             await this.sT.userDotsDelete1.waitForExist({ timeout: 5000 });
             await this.sT.userDotsDelete1.click();
-        } else if (i === 1) {
+        } 
+        if (i === 1) {
             await this.sT.userDoubleClick2.moveTo();
             await this.sT.userDelete2.waitForDisplayed({ timeout: 5000 });
             await this.sT.userDelete2.click();

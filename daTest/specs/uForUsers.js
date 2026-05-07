@@ -26,8 +26,8 @@ describe('Test', () => {
 //Positive CRUD test with three dots
 describe('Light Test', () => {
     it('should CRUD test with three dots', async () => {
-        for (let i = 0; i < new stuff().phoneTypesList.length; i++){
-            await new daCode().createUserP(i);
+        for (let q = 0; q < new stuff().phoneTypesList.length; q++){
+            await new daCode().createUserP(q);
             await expect(new stuff().userDoubleClick1).toBeExisting();
             await new daCode().editUserP(0);
             await expect(new stuff().userDoubleClick2).toBeExisting();
@@ -40,8 +40,8 @@ describe('Light Test', () => {
 //Positive CRUD test with hover
 describe('Light Test', () => {
     it('should CRUD test with hover', async () => {
-        for (let i = 0; i < new stuff().phoneTypesList.length; i++){
-            await new daCode().createUserP(i);
+        for (let l = 0; l < new stuff().phoneTypesList.length; l++){
+            await new daCode().createUserP(l);
             await expect(new stuff().userDoubleClick1).toBeExisting();
             await new daCode().editUserP(1);
             await expect(new stuff().userDoubleClick2).toBeExisting();
@@ -67,8 +67,8 @@ describe('Test', () => {
 //Positive CRUD test with three dots
 describe('Dark Test', () => {
     it('should CRUD test with three dots', async () => {
-        for (let i = 0; i < new stuff().phoneTypesList.length; i++){
-            await new daCode().createUserP(i);
+        for (let p = 0; p < new stuff().phoneTypesList.length; p++){
+            await new daCode().createUserP(p);
             await expect(new stuff().userDoubleClick1).toBeExisting();
             await new daCode().editUserP(0);
             await expect(new stuff().userDoubleClick2).toBeExisting();
@@ -81,8 +81,8 @@ describe('Dark Test', () => {
 //Positive CRUD test with hover
 describe('Dark Test', () => {
     it('should CRUD test with hover', async () => {
-        for (let i = 0; i < new stuff().phoneTypesList.length; i++){
-            await new daCode().createUserP(i);
+        for (let k = 0; k < new stuff().phoneTypesList.length; k++){
+            await new daCode().createUserP(k);
             await expect(new stuff().userDoubleClick1).toBeExisting();
             await new daCode().editUserP(1);
             await expect(new stuff().userDoubleClick2).toBeExisting();

@@ -333,4 +333,8 @@ export default class stuff {
         return $('//div/div[contains(text(), "Create new")]');
     }
 
+    get pageStableCheck () {
+        return $('div[id="root"]');
+    }
+
 };

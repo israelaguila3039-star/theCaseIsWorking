@@ -3,7 +3,6 @@ import 'dotenv/config.js';
 const usernameH = process.env.TEST_USERNAME ?? 'USERNAME_NOT_FOUND';
 const passwordH = process.env.TEST_PASSWORD ?? 'PASSWORD_NOT_FOUND';
 
-// export { username, password };
 
 
 export default class whut {
