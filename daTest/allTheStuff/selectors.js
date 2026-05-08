@@ -337,4 +337,20 @@ export default class stuff {
         return $('div[id="root"]');
     }
 
+    get somethingListSelectorsBoxes () {
+        retunr [$('[data-testid="account-settings-time-periods-dropdown-option-Today"]'). $('[data-testid="account-settings-time-periods-dropdown-option-This Week"]'), $('[data-testid="account-settings-time-periods-dropdown-option-This Month"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-This Qtr"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Previous Qtr"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 4"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 3"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 2"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 1"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-Last 3 Months"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Last 6 Months"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Last 12 Months"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-Year To Date"]')];
+    }
+
+    get somethingListSelectorsBoxesSelected () {
+        retunr [$('[data-testid="account-settings-time-periods-dropdown-option-Today"][aria-checked="true"]'). $('[data-testid="account-settings-time-periods-dropdown-option-This Week"][aria-checked="true"]'), $('[data-testid="account-settings-time-periods-dropdown-option-This Month"][aria-checked="true"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-This Qtr"][aria-checked="true"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Previous Qtr"][aria-checked="true"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 4"][aria-checked="true"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 3"][aria-checked="true"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 2"][aria-checked="true"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Qtr 1"][aria-checked="true"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-Last 3 Months"][aria-checked="true"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Last 6 Months"][aria-checked="true"]'), $('[data-testid="account-settings-time-periods-dropdown-option-Last 12 Months"][aria-checked="true"]'), 
+            $('[data-testid="account-settings-time-periods-dropdown-option-Year To Date"][aria-checked="true"]')];
+    }
+
 };

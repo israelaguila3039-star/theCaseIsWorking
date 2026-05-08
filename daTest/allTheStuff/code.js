@@ -200,7 +200,6 @@ export default class daCode {
 
     async createUserP (i) {
         await this.funcs.refreshPage();
-        await this.funcs.noDimsiss();
         await this.sT.addUserButton.click();
         for (let m = 0; m < this.sT.userBoxes.length; m++) {
             await this.funcs.giveBoxValue(this.sT.userBoxes[m], this.wH.userBoxP[m])
@@ -213,7 +212,7 @@ export default class daCode {
     }
 
     async editUserP (i) {
-        await this.funcs.noDimsiss();
+        await this.funcs.refreshPage();
         if (i === 0) {
             await this.sT.userDots1.waitForExist({ timeout: 5000 });
             await this.sT.userDots1.moveTo();
@@ -231,7 +230,7 @@ export default class daCode {
             await this.funcs.giveBoxValue(this.sT.userEBoxes[e], this.wH.userBoxPE[e])
         }
         await this.sT.updateButton.waitForClickable({ timeout: 5000 });
-        await this.sT.updateButton.moveTo()
+        await this.sT.updateButton.moveTo();
         await this.sT.updateButton.click();
         await this.sT.updateButton.waitForClickable({ timeout: 5000, reverse: true})
         await this.sT.usersSettings.waitForClickable({ timeout: 5000 });
@@ -239,26 +238,35 @@ export default class daCode {
         await this.sT.userDoubleClick2.waitForExist({ timeout: 5000 });
     }
 
-    async deleteUserP (i) {
-        await this.funcs.noDimsiss();
+    async deleteUserDots () {
         await this.funcs.refreshPage();
-        if (i === 0) {
-            await this.sT.userDots2.waitForExist({ timeout: 5000 });
-            await this.sT.userDots2.moveTo();
-            await this.sT.userDots2.waitForDisplayed({ timeout: 5000 });
-            await this.sT.userDots2.click();
-            await this.sT.userDotsDelete1.waitForExist({ timeout: 5000 });
-            await this.sT.userDotsDelete1.click();
-        } 
-        if (i === 1) {
-            await this.sT.userDoubleClick2.moveTo();
-            await this.sT.userDelete2.waitForDisplayed({ timeout: 5000 });
-            await this.sT.userDelete2.click();
-        }
+        await this.sT.userDots2.waitForExist({ timeout: 7000 });
+        await this.sT.userDots2.moveTo();
+        await this.sT.userDots2.waitForDisplayed({ timeout: 5000 });
+        await this.sT.userDots2.click();
+        await this.sT.userDotsDelete1.waitForExist({ timeout: 5000 });
+        await this.sT.userDotsDelete1.click();
         await this.sT.confirmDelete.waitForClickable({ timeout: 5000 });
+        await this.sT.confirmDelete.moveTo();
         await this.sT.confirmDelete.click();
+        await this.funcs.noDimsiss();
         await this.sT.userDoubleClick2.waitForExist({ timeout: 10000, reverse:true });
         await this.sT.userDoubleClick1.waitForExist({ timeout: 10000, reverse:true });
+    }
+
+    async deleteUserHover () {
+        await this.funcs.noDimsiss();
+        await this.funcs.refreshPage();
+        await this.sT.userDoubleClick2.waitForExist({ timeout: 7000 });
+        await this.sT.userDoubleClick2.moveTo();
+        await this.sT.userDelete2.waitForDisplayed({ timeout: 5000 });
+        await this.sT.userDelete2.click();
+        await this.sT.confirmDelete.waitForClickable({ timeout: 5000 });
+        await this.sT.confirmDelete.moveTo();
+        await this.sT.confirmDelete.click();
+        await this.funcs.noDimsiss();
+        await this.sT.userDoubleClick2.waitForExist({ timeout: 10000, reverse: true });
+        await this.sT.userDoubleClick1.waitForExist({ timeout: 10000, reverse: true });
     }
 
 };

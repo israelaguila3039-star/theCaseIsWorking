@@ -1,7 +1,6 @@
 import { expect } from '@wdio/globals'
 import daCode from '../allTheStuff/code.js'
 import stuff from '../allTheStuff/selectors.js'
-import itFunctions from '../allTheStuff/functions.js'
 
 //Just login so that tests may be performed
 describe('Test', () => {
