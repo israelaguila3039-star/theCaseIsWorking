@@ -1,6 +1,6 @@
 import { expect } from '@wdio/globals'
-import daCode from '../allTheStuff/code.js'
-import stuff from '../allTheStuff/selectors.js'
+import daCode from '../pageObjects/code.js'
+import stuff from '../pageObjects/selectors.js'
 
 //Just login so that tests may be performed
 describe('Test', () => {
